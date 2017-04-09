@@ -2,7 +2,7 @@ class FlightsController < ApplicationController
 
   def index
     @response = Unirest.post(
-      "https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyDJlpFsutiHgzDYSknQcZXdn5FRSnkFVFw",
+      "https://www.googleapis.com/qpxExpress/v1/trips/search?key=#{ENV['API_KEY']}",
       headers:{ "Content-Type" => "application/json" },
       parameters:{ 
                             request: {
