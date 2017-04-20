@@ -1,6 +1,10 @@
 class FlightsController < ApplicationController
 
   def index
+    @origin_city = params[:form_origin_city]
+    @destination_city = params[:form_destinatation_city]
+    @departure_date = params[:form_departure_date]
+    @return_date = params[:form_return_date]
     @response = Unirest.post(
       "https://www.googleapis.com/qpxExpress/v1/trips/search?key=#{ENV['API_KEY']}",
       headers:{ "Content-Type" => "application/json" },
