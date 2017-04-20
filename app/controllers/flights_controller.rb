@@ -29,7 +29,7 @@ class FlightsController < ApplicationController
                               refundable: false
                             }
                           }.to_json
-    ).body
+    ).body["trips"]["tripOption"][0]["saleTotal"]
                         
   end
 
