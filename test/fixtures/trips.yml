@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departure_city: MyString
+  destination_city: MyString
+  user_id: 1
+  sale_total: 1
+
+two:
+  departure_city: MyString
+  destination_city: MyString
+  user_id: 1
+  sale_total: 1

@@ -1,8 +1,9 @@
 class FlightsController < ApplicationController
+  #2017-06-01
 
   def index
-    @origin_city = params[:form_origin_city]
-    @destination_city = params[:form_destinatation_city]
+    # @origin_city = params[:form_origin_city]
+    # @destination_city = params[:form_destinatation_city]
     @departure_date = params[:form_departure_date]
     @return_date = params[:form_return_date]
     @response = Unirest.post(
@@ -12,14 +13,14 @@ class FlightsController < ApplicationController
                             request: {
                               slice: [
                                 {
-                                  origin: "CHI",
-                                  destination: "AMS",
-                                  date: "2017-05-01"
+                                  origin: params[:form_origin_city] || 'CHI',
+                                  destination: params[:form_destination_city] || 'AMS',
+                                  date: @departure_date || '2017-08-01'
                                 },
                                 {
-                                  origin: "AMS",
-                                  destination: "CHI",
-                                  date: "2017-06-01"
+                                  origin: params[:form_destination_city] || 'AMS',
+                                  destination: params[:form_origin_city] || 'CHI',
+                                  date: @return_date || '2017-09-01'
                                 }
                               ],
                               passengers: {
@@ -34,8 +35,6 @@ class FlightsController < ApplicationController
                             }
                           }.to_json
     ).body["trips"]["tripOption"][0]["saleTotal"]
-                        
+    
   end
-
-
 end

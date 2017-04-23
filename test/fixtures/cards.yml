@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  notional_spend_requirement: 1
+  month_spend_requirement: 1
+  card_point_bonus: 1
+  value_per_point: 9.99
+  annual_fee: 1
+  fee_waived: false
+
+two:
+  name: MyString
+  notional_spend_requirement: 1
+  month_spend_requirement: 1
+  card_point_bonus: 1
+  value_per_point: 9.99
+  annual_fee: 1
+  fee_waived: false

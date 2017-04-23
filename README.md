@@ -1,3 +1,8 @@
+
+
+
+Card.first.notional_spend_requirement / Card.first.month_spend_requirement
+
 # README
 
 This README would normally document whatever steps are necessary to get the
