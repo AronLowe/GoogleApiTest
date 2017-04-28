@@ -56,17 +56,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
           bonusValue: 399},
       ],
       filteredCards: [],
-      monthlySpend: ""
+      monthlySpend: "", 
+      sum: "",
+      filteredCardsBonus: ""
     },
     methods:{
       eligibleCards: function() {
+        this.filteredCards = [];
         for (var i = 0; i < this.cards.length; i++) {
           if (parseInt(this.monthlySpend, 10) >= ( this.cards[i].notionalSpendRequirement / this.cards[i].monthSpendRequirement)) {
             this.filteredCards.push(this.cards[i]);
+            console.log(this.filteredCards);
           }
         }
+        var sum = 0;
+        for (var j = 0; j < this.filteredCards.length; j++) {
+          console.log(this.filteredCards['bonusValue']);
+          sum += parseInt(this.filteredCards['bonusValue']);
+          console.log(sum);
+        }
         return this.filteredCards;
-      }
+
+        // anything after var sum doesnt work
+
+      },
+      // calcEligibleCardBonus: function(filteredCards) {
+       
+      // }
     }
   });
 });
