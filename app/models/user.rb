@@ -4,19 +4,15 @@ class User < ApplicationRecord
   has_many :cards, through: :card_eligibilities
   has_many :trips
 
-  def eligible_cards
-    cards = []
-    @cards = Card.all
-    # if (self.monthly_spend >= (@card.notional_spend_requirement/@card.month_spend_requirement))
-    #     then cards << @card 
-    # end
-
-    @cards.each do |card|
-      if (self.monthly_spend >= (card.notional_spend_requirement/card.month_spend_requirement))
-        then cards << card.name
-      end
-    end
-    return cards
-  end
+  # def eligible_cards
+  #   cards = []
+  #   @cards = Card.all
+  #   @cards.each do |card|
+  #     if (self.monthly_spend >= (card.notional_spend_requirement/card.month_spend_requirement))
+  #       then cards << card.name
+  #     end
+  #   end
+  #   return cards
+  # end
 end
 
