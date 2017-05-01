@@ -3,7 +3,7 @@ class FlightsController < ApplicationController
 
   def index
     # @origin_city = params[:form_origin_city]
-    # @destination_city = params[:form_destinatation_city]
+    # # @destination_city = params[:form_destinatation_city]
     @departure_date = params[:form_departure_date]
     @return_date = params[:form_return_date]
     @response = Unirest.post(
@@ -34,7 +34,6 @@ class FlightsController < ApplicationController
                               refundable: false
                             }
                           }.to_json
-    ).body["trips"]["tripOption"][0]["saleTotal"]
-    
+    ).body["trips"]["tripOption"][0]["saleTotal"] 
   end
 end

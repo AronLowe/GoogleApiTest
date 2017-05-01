@@ -71,10 +71,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
         var sum = 0;
         for (var j = 0; j < this.filteredCards.length; j++) {
-          console.log(this.filteredCards['bonusValue']);
-          sum += parseInt(this.filteredCards['bonusValue']);
-          console.log(sum);
+          console.log(this.filteredCards[j]['bonusValue']);
+          sum += parseInt(this.filteredCards[j]['bonusValue']);
         }
+        console.log(sum);
+        this.sum = sum;
         return this.filteredCards;
 
         // anything after var sum doesnt work

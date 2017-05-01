@@ -5,7 +5,7 @@
    Amount: <input type="text" v-model="monthlySpend">
   <button v-on:click="eligibleCards()">Enter</button> 
   <div v-for="card in filteredCards">{{ card.name }}</div>
-  <div> {{ sum }}</div>
+  <div> {{ sum }} </div>
  </div> 
 </div>
 
@@ -21,3 +21,4 @@ Return date: <input type="text" name="form_return_date">
 <% end %></div>
 
 Retail flight price <%= @response %> 
+
