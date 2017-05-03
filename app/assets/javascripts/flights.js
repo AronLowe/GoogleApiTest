@@ -77,10 +77,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log(sum);
         this.sum = sum;
         return this.filteredCards;
+        },
+        chosenCards: function() {
 
-        // anything after var sum doesnt work
+        }
 
-      },
+
       // calcEligibleCardBonus: function(filteredCards) {
        
       // }
