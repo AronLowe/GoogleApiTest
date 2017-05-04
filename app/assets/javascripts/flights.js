@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 175,
           feeWaived: true,
           bonusValue: 500,
-          cardSelected: false},
+          cardSelected: true},
         {name: "Chase Sapphire Prerred Card", 
           notionalSpendRequirement: 4000,
           monthSpendRequirement: 3,
@@ -86,7 +86,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
 
       toggleChosenCards: function(inputCard) {
-        inputCard.cardSelected = !inputCard.cardSelected;
+        // inputCard.cardSelected = !inputCard.cardSelected;
+        var selectedCards = this.cards.filter(function(card) {
+          return card.cardSelected;
+        });
+        console.log(selectedCards, selectedCards.length);
       },
 
 
