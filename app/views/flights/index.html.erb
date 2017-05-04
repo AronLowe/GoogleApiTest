@@ -10,6 +10,9 @@
 <!-- html here shows cards you choose -->
 
 <h1>Here are the cards you chose</h1>
+<ul>
+  <li v-for="card in cards" v-on:click="toggleChosenCards(card)" v-bind:class= "{Chosen: card.cardSelected}" >{{ }} </li>
+</ul>
 <div> {{ }}</div>
 
 

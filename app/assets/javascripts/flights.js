@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           valuePerPoint: 0.12e-1,
           annualFee: 95,
           feeWaived: false,
-          bonusValue: 960},
+          bonusValue: 960,
+          cardSelected: false},
         {name: "AMEX Business Gold Rewards Card",
           notionalSpendRequirement: 5000,
           monthSpendRequirement: 3,
@@ -21,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           valuePerPoint: 0.1e-1,
           annualFee: 175,
           feeWaived: true,
-          bonusValue: 500},
+          bonusValue: 500,
+          cardSelected: false},
         {name: "Chase Sapphire Prerred Card", 
           notionalSpendRequirement: 4000,
           monthSpendRequirement: 3,
@@ -29,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           valuePerPoint: 0.12e-1,
           annualFee: 95,
           feeWaived: true,
-          bonusValue: 600},
+          bonusValue: 600,
+          cardSelected: false},
         {name: "Citi ThankYou Prefered card",
           notionalSpendRequirement: 1000,
           monthSpendRequirement: 3,
@@ -37,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           valuePerPoint: 0.133e-1,
           annualFee: 0,
           feeWaived: true,
-          bonusValue: 200},
+          bonusValue: 200,
+          cardSelected: false},
         {name: "Citi Prestige",
           notionalSpendRequirement: 4000,
           monthSpendRequirement: 3,
@@ -45,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           valuePerPoint: 0.133e-1,
           annualFee: 450,
           feeWaived: false,
-          bonusValue: 532},
+          bonusValue: 532,
+          cardSelected: false},
         {name: "Citi ThankYou Premier",
           notionalSpendRequirement: 3000,
           monthSpendRequirement: 3,
@@ -53,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           valuePerPoint: 0.133e-1,
           annualFee: 95,
           feeWaived: true,
-          bonusValue: 399},
+          bonusValue: 399,
+          cardSelected: false},
       ],
       filteredCards: [],
       monthlySpend: "", 
@@ -77,10 +83,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log(sum);
         this.sum = sum;
         return this.filteredCards;
-        },
-        chosenCards: function() {
+      },
 
-        }
+      toggleChosenCards: function(inputCard) {
+        inputCard.cardSelected = !inputCard.cardSelected;
+      },
 
 
       // calcEligibleCardBonus: function(filteredCards) {

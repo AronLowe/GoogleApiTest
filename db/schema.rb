@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423202421) do
+ActiveRecord::Schema.define(version: 20170503233712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 20170423202421) do
     t.decimal  "value_per_point"
     t.integer  "annual_fee"
     t.boolean  "fee_waived"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.integer  "bonus_value"
+    t.boolean  "selected_by_user",           default: false
   end
 
   create_table "trips", force: :cascade do |t|
