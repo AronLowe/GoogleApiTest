@@ -4,9 +4,12 @@
    <h1>How much do you spend a Month:</h1>
    Amount: <input type="text" v-model="monthlySpend">
   <button v-on:click="eligibleCards()">Enter</button> 
-  <div v-for="card in filteredCards">{{ card.name }}</div>
+  <div v-for="card in filteredCards" v-on:click="toggleChosenCards(card)" >
+    <input type="checkbox" name="" v-model="card.cardSelected">{{ card.name }}
+  </div>
   <div> {{ sum }} </div>
  </div> 
+
 </div>
 
 <!-- html below here pulls from flights controller - ruby -->
