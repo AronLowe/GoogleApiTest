@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       message: 'Hello Vue!',
       cards: [
-        {name: "Chase Ink Business Preferred",
+        {id: 1,
+          name: "Chase Ink Business Preferred",
           notionalSpendRequirement: 5000,
           monthSpendRequirement: 3,
           cardPointBonus: 80000,
@@ -15,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           feeWaived: false,
           bonusValue: 960,
           cardSelected: false},
-        {name: "AMEX Business Gold Rewards Card",
+        {id: 2,
+          name: "AMEX Business Gold Rewards Card",
           notionalSpendRequirement: 5000,
           monthSpendRequirement: 3,
           cardPointBonus: 50000,
@@ -23,8 +25,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 175,
           feeWaived: true,
           bonusValue: 500,
-          cardSelected: true},
-        {name: "Chase Sapphire Prerred Card", 
+          cardSelected: false},
+        {id: 3,
+          name: "Chase Sapphire Prerred Card", 
           notionalSpendRequirement: 4000,
           monthSpendRequirement: 3,
           cardPointBonus: 50000,
@@ -33,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           feeWaived: true,
           bonusValue: 600,
           cardSelected: false},
-        {name: "Citi ThankYou Prefered card",
+        {id: 4,
+          name: "Citi ThankYou Prefered card",
           notionalSpendRequirement: 1000,
           monthSpendRequirement: 3,
           cardPointBonus: 15000,
@@ -42,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           feeWaived: true,
           bonusValue: 200,
           cardSelected: false},
-        {name: "Citi Prestige",
+        {id: 5,
+          name: "Citi Prestige",
           notionalSpendRequirement: 4000,
           monthSpendRequirement: 3,
           cardPointBonus: 40000,
@@ -51,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           feeWaived: false,
           bonusValue: 532,
           cardSelected: false},
-        {name: "Citi ThankYou Premier",
+        {id: 6,
+          name: "Citi ThankYou Premier",
           notionalSpendRequirement: 3000,
           monthSpendRequirement: 3,
           cardPointBonus: 30000,
@@ -92,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
         console.log(selectedCards, selectedCards.length);
       },
-
 
       // calcEligibleCardBonus: function(filteredCards) {
        
