@@ -3,15 +3,40 @@
 
 <!-- html below here pulls from flights controller - ruby -->
 <h1>Plan a trip</h1>
-<div><%= form_tag "/flights", method: :get do %>  
-Origin City: <input type="text" name="form_origin_city" >
-Destination City: <input type="text" name="form_destination_city">
-Departure date: <input type="text" name="form_departure_date">
-Return date: <input type="text" name="form_return_date">
+
+<div><%= form_tag "/flights", method: :get do %> 
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">call_made</i>
+          <input id="icon_prefix" type="text" class="validate" name="form_origin_city">
+          <label for="icon_prefix">Origin City</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">call_received</i>
+          <input id="icon_prefix" type="text" class="validate" name="form_destination_city">
+          <label for="icon_prefix">Destination City</label>
+        </div>
+      </div>
+    </form>
+
 <input type="submit" value="submit">
 <% end %></div>
+  </div>
+
+<!-- Origin City: <input type="text" name="form_origin_city" >
+Destination City: <input type="text" name="form_destination_city"> -->
+<!-- Departure date: <input type="text" name="form_departure_date"> -->
+<!-- Return date: <input type="text" name="form_return_date"> -->
+
 
 Retail flight price <%= @response %> 
+<div>
+  <a class="waves-effect waves-light btn" href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>
+</div>
+ 
 
  <div>
    <h1>How much do you spend a Month:</h1>

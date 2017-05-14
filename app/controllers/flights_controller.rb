@@ -6,7 +6,7 @@ class FlightsController < ApplicationController
     # # @destination_city = params[:form_destinatation_city]
     @departure_date = params[:form_departure_date]
     @return_date = params[:form_return_date]
-    if @return_date == nil
+    if !params[:form_origin_city]
       render "index.html.erb"
     else
       @response = Unirest.post(
