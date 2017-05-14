@@ -70,7 +70,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       filteredCards: [],
       monthlySpend: "", 
       sum: "",
-      filteredCardsBonus: ""
+      filteredCardsBonus: "",
+      bonusSum: 0,
+      userSpendRequirement: 0
+    },
+    computed: {
+      timeToAchievement: function() {
+        return this.userSpendRequirement / this.monthlySpend;
+      }
     },
     methods:{
       eligibleCards: function() {
@@ -96,11 +103,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var selectedCards = this.cards.filter(function(card) {
           return card.cardSelected;
         });
+
         console.log(selectedCards, selectedCards.length);
+
+        this.bonusSum = 0;
+        this.userSpendRequirement = 0;
+        for (var k = 0; k < selectedCards.length; k++) {
+          this.bonusSum += parseInt(selectedCards[k]['bonusValue']);
+          this.userSpendRequirement += parseInt(selectedCards[k]['notionalSpendRequirement']);
+        }
       },
 
-      // calcEligibleCardBonus: function(filteredCards) {
-       
+      // calcEligibleCardBonus: function(fiteredCards) {
+      //   this.userCards = [];
+      //   var bonusSum = 0;
+      //   for (var k = 0; k < this.selectedCards.length; k++) {
+      //     bonusSum += parseInt(this.selectedCards[k]['bonusValue']);
+      //     console.log(bonusSum);
+      //     this.userCards.push(this.selectedCards);
+      //     this.bonusSum = bonusSum;
+      //     return this.selectedCards;
+      //   }
+      //   console.log(this.userCards);
       // }
     }
   });

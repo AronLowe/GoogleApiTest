@@ -2,9 +2,9 @@
   {{ message }}
 
 <!-- html below here pulls from flights controller - ruby -->
-<h1>Plan a trip</h1>
+<h1 class="center-align" >Plan a trip</h1>
 
-<div><%= form_tag "/flights", method: :get do %> 
+<div class="center-align" ><%= form_tag "/flights", method: :get do %> 
 
   <div class="row">
     <form class="col s12">
@@ -22,7 +22,7 @@
       </div>
     </form>
 
-<input type="submit" value="submit">
+<input class="center-align" type="submit" value="submit">
 <% end %></div>
   </div>
 
@@ -37,8 +37,8 @@ Retail flight price <%= @response %>
   <a class="waves-effect waves-light btn" href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>
 </div>
  
-
- <div>
+<h5 class="center-align">This should be center aligned</h5>
+ <div class="center-align" >
    <h1>How much do you spend a Month:</h1>
    Amount: <input type="text" v-model="monthlySpend">
   <button v-on:click="eligibleCards()">Enter</button> 
@@ -48,7 +48,10 @@ Retail flight price <%= @response %>
       <label v-bind:for="'filled-in-box' + card.id">{{ card.name }}</label>
 
   </div>
-  <div> {{ sum }} </div>
+  <div> Sum: {{ sum }} </div>
+  <div> bonusSum: {{ bonusSum }} </div>
+   <div> timeToAchievement not dynamic: {{ userSpendRequirement }} </div>
+  <div> timeToAchievement: {{ timeToAchievement }} </div>
  </div> 
 
 </div>
