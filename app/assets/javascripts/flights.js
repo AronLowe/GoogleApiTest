@@ -1,10 +1,11 @@
-/* global Vue, $ */
+/* global Vue, $, railsRetailFlightPrice */
 
 document.addEventListener("DOMContentLoaded", function(event) { 
   var app = new Vue({
     el: '#app',
     data: {
       message: 'Hello Vue!',
+      retailFlightPrice: railsRetailFlightPrice,
       cards: [
         {id: 1,
           name: "Chase Ink Business Preferred",
@@ -77,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     computed: {
       timeToAchievement: function() {
         return this.userSpendRequirement / this.monthlySpend;
+      },
+
+      outOfPocketPrice: function() {
+        return this.retailFlightPrice - this.bonusSum;
       }
     },
     methods:{

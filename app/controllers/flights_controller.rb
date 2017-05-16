@@ -7,6 +7,7 @@ class FlightsController < ApplicationController
     @departure_date = params[:form_departure_date]
     @return_date = params[:form_return_date]
     if !params[:form_origin_city]
+      @response = 0
       render "index.html.erb"
     else
       @response = Unirest.post(
@@ -38,6 +39,11 @@ class FlightsController < ApplicationController
                               }
                             }.to_json
       ).body["trips"]["tripOption"][0]["saleTotal"] 
+      @response = @response.delete!'USD'
+      @response = @response.to_f
+      puts "*" * 50
+      p @response
+      puts "*" * 50
       render "index.html.erb"
     end
   end
