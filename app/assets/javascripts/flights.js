@@ -1,6 +1,21 @@
 /* global Vue, $, railsRetailFlightPrice */
 
 document.addEventListener("DOMContentLoaded", function(event) { 
+  // $('.carousel').carousel();
+  // Plugin initialization
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+  $('.carousel').carousel();
+  $('.slider').slider();
+  $('.parallax').parallax();
+  $('.modal').modal();
+  $('.scrollspy').scrollSpy();
+  $('.button-collapse').sideNav({'edge': 'left'});
+  $('.datepicker').pickadate({selectYears: 20});
+  $('select').not('.disabled').material_select();
+  $('input.autocomplete').autocomplete({
+    data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'},
+  });
+
   var app = new Vue({
     el: '#app',
     data: {
@@ -16,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 95,
           feeWaived: false,
           bonusValue: 960,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/ink-business-preferred-credit-card.png"},
         {id: 2,
           name: "AMEX Business Gold Rewards Card",
           notionalSpendRequirement: 5000,
@@ -26,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 175,
           feeWaived: true,
           bonusValue: 500,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/AMEX-business-gold.png"},
         {id: 3,
           name: "Chase Sapphire Prerred Card", 
           notionalSpendRequirement: 4000,
@@ -36,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 95,
           feeWaived: true,
           bonusValue: 600,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/chase-sapphire-preferred.png"},
         {id: 4,
           name: "Citi ThankYou Prefered card",
           notionalSpendRequirement: 1000,
@@ -46,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 0,
           feeWaived: true,
           bonusValue: 200,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/citi-thankyou-preferred.png"},
         {id: 5,
           name: "Citi Prestige",
           notionalSpendRequirement: 4000,
@@ -56,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 450,
           feeWaived: false,
           bonusValue: 532,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/citi-prestige-card.png"},
         {id: 6,
           name: "Citi ThankYou Premier",
           notionalSpendRequirement: 3000,
@@ -66,7 +86,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 95,
           feeWaived: true,
           bonusValue: 399,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/citi-thankyou-premier-card.png"},
       ],
       filteredCards: [],
       monthlySpend: "", 

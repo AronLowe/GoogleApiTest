@@ -20,7 +20,7 @@ $(function () {
 	}
 	else {
 		$("body").vide({
-		    mp4: 'video/ocean.mp4',
+		    mp4: 'video/28.mp4',
 		    webm: 'video/ocean.webm',
 		    ogv: 'video/ocean.ogv',
 		    poster: 'video/ocean.jpg'
