@@ -23,15 +23,15 @@
           <div class="container">
     
 
-Retail flight price {{ retailFlightPrice }}!!! 
- <div> outOfPocketPrice: {{ outOfPocketPrice }} </div>
+<!-- Retail flight price {{ retailFlightPrice }}!!!  -->
+ <div> Out of Pocket Cost of Flight: {{ outOfPocketPrice }} </div>
  <div> timeToAchievement: {{ timeToAchievement }} </div>
 
         
    <h1>How much do you spend a Month:</h1>
  <input type="text" v-model="monthlySpend">
-  <button v-on:click="eligibleCards()">Enter</button> 
-
+  <button class="waves-effect waves-light btn" v-on:click="eligibleCards()">Enter</button> <br>
+<div> <br>
  <div class="row" >
   <div v-for="card in filteredCards" class="col s4" style="min-height: 200px">
    <!--  <input type="checkbox" name="" v-model="card.cardSelected">{{ card.name }} -->
@@ -39,6 +39,7 @@ Retail flight price {{ retailFlightPrice }}!!!
       <label  v-bind:for="'filled-in-box' + card.id">  <img v-bind:src="card.image" ></label>
   </div>
  </div> 
+ </div>
 
 
 
