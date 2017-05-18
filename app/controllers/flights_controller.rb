@@ -44,7 +44,7 @@ class FlightsController < ApplicationController
       puts "*" * 50
       p @response
       puts "*" * 50
-      render "index.html.erb"
+      render "show.html.erb"
     end
   end
 end

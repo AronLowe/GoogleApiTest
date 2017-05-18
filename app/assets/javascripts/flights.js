@@ -1,20 +1,7 @@
 /* global Vue, $, railsRetailFlightPrice */
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-  // $('.carousel').carousel();
-  // Plugin initialization
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
-  $('.carousel').carousel();
-  $('.slider').slider();
-  $('.parallax').parallax();
-  $('.modal').modal();
-  $('.scrollspy').scrollSpy();
-  $('.button-collapse').sideNav({'edge': 'left'});
-  $('.datepicker').pickadate({selectYears: 20});
-  $('select').not('.disabled').material_select();
-  $('input.autocomplete').autocomplete({
-    data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'},
-  });
+
 
   var app = new Vue({
     el: '#app',
@@ -105,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return this.retailFlightPrice - this.bonusSum;
       }
     },
-    methods:{
+    methods: {
       eligibleCards: function() {
         this.filteredCards = [];
         for (var i = 0; i < this.cards.length; i++) {
@@ -138,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.bonusSum += parseInt(selectedCards[k]['bonusValue']);
           this.userSpendRequirement += parseInt(selectedCards[k]['notionalSpendRequirement']);
         }
-      },
+      }
 
       // calcEligibleCardBonus: function(fiteredCards) {
       //   this.userCards = [];
@@ -152,6 +139,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //   }
       //   console.log(this.userCards);
       // }
+    },
+    mounted: function() {
+      // $('.carousel').carousel();
+      // Plugin initialization
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+      $('.carousel').carousel();
+      $('.slider').slider();
+      $('.parallax').parallax();
+      // $('.modal').modal();
+      $('.scrollspy').scrollSpy();
+      // $('.button-collapse').sideNav({'edge': 'left'});
+      // $('.datepicker').pickadate({selectYears: 20});
+      $('select').not('.disabled').material_select();
+      // $('input.autocomplete').autocomplete({
+      //   data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'}
+      // });
     }
   });
 });
