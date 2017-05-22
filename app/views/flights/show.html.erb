@@ -23,13 +23,17 @@
           <div class="container">
     
 
+<br>
+<br>
+<br>
 <!-- Retail flight price {{ retailFlightPrice }}!!!  -->
- <div> Out of Pocket Cost of Flight: {{ outOfPocketPrice }} </div>
- <div> timeToAchievement: {{ timeToAchievement }} </div>
+ <div> Out of Pocket Cost of Flight: ${{ outOfPocketPrice.toFixed(2) }} </div>
+ <div> You will achieve the bonus in {{ timeToAchievement }} months</div>
+ <br>
 
-        
+   <div class="col s4" >    
    <h1>How much do you spend a Month:</h1>
- <input type="text" v-model="monthlySpend">
+ <input style="text-align:center" class="col s2" type="text" v-model="monthlySpend">
   <button class="waves-effect waves-light btn" v-on:click="eligibleCards()">Enter</button> <br>
 <div> <br>
  <div class="row" >
@@ -37,19 +41,17 @@
    <!--  <input type="checkbox" name="" v-model="card.cardSelected">{{ card.name }} -->
       <input type="checkbox" class="filled-in" v-bind:id="'filled-in-box' + card.id" v-model="card.cardSelected" v-on:click="toggleChosenCards(card)"/>
       <label  v-bind:for="'filled-in-box' + card.id">  <img v-bind:src="card.image" ></label>
+      </div> 
   </div>
  </div> 
  </div>
-
-
 
 <!--   <div> Sum: {{ sum }} </div>
   <div> bonusSum: {{ bonusSum }} </div>
    <div> timeToAchievement not dynamic: {{ userSpendRequirement }} </div> -->
   
 </div>
-
-
+ 
 
 <div>
   <a class="waves-effect waves-light btn" href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>

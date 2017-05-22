@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     computed: {
       timeToAchievement: function() {
-        return this.userSpendRequirement / this.monthlySpend;
+        return (this.userSpendRequirement / this.monthlySpend).toFixed(1);
       },
 
       outOfPocketPrice: function() {
@@ -155,6 +155,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // $('input.autocomplete').autocomplete({
       //   data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'}
       // });
+      setTimeout(function() {
+        $('.overlay').fadeTo("slow", 1);
+        
+      }, 3000); 
     }
   });
 });
