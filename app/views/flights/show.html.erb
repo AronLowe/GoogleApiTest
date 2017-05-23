@@ -24,13 +24,27 @@
     
 
 <br>
-<br>
-<br>
+
+
 <!-- Retail flight price {{ retailFlightPrice }}!!!  -->
  <div> Out of Pocket Cost of Flight: ${{ outOfPocketPrice.toFixed(2) }} </div>
+
+ <title>W3.CSS</title>
+<meta name="viewport" content="width=device-width/2, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<div class="w3-container">
+
+<div class="w3-border">
+  <!-- <div class="w3-grey" style="height:24px;width:{{ progressBar }}"></div> -->
+  <div class="w3-aqua" v-bind:style="'height:24px;width:' + progressBar + ''"></div>
+</div>
+</div>
+
  <div> You will achieve the bonus in {{ timeToAchievement }} months</div>
  <br>
-
+<br>
+<br>
    <div class="col s4" >    
    <h1>How much do you spend a Month:</h1>
  <input style="text-align:center" class="col s2" type="text" v-model="monthlySpend">
@@ -54,7 +68,7 @@
  
 
 <div>
-  <a class="waves-effect waves-light btn" href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>
+  <a href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>
 </div>
  
 <!-- <h5 class="center-align">This should be center aligned</h5> -->

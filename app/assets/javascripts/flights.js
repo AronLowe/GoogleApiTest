@@ -90,6 +90,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       outOfPocketPrice: function() {
         return this.retailFlightPrice - this.bonusSum;
+      },
+
+      progressBar: function() {
+        // return ((3 / 4).toFixed(1) * 100 ) + "%" ;
+        return Math.min(((this.bonusSum / this.retailFlightPrice).toFixed(2) * 100), 100) + "%" ;
+      },
+      testFunction: function() {
+        console.log("Panda");
       }
     },
     methods: {
@@ -157,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // });
       setTimeout(function() {
         $('.overlay').fadeTo("slow", 1);
-        
+
       }, 3000); 
     }
   });
