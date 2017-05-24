@@ -93,17 +93,25 @@
       </div> 
   </div>
  </div> 
- 
+
+  <div v-if="showEditSpending">
     <p><i>Change your spending habits?</i></p>
     <input style="text-align:center;font-size: 20px;" class="col s2" type="text" v-model="monthlySpend">
     <button class="waves-effect waves-light btn" v-on:click="eligibleCards()">Edit</button> <br>
+  </div>
+  <button class="waves-effect waves-light btn" v-on:click="showEditSpending = !showEditSpending">Change spending habits</button>
+
  </div>
 
 <!--   <div> Sum: {{ sum }} </div>
   <div> bonusSum: {{ bonusSum }} </div>
    <div> timeToAchievement not dynamic: {{ userSpendRequirement }} </div> -->
   
+<!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
 
+<br>
+<br>
  
 
 <div>
@@ -112,6 +120,18 @@
  </div>
 </div>
  
+
+  <!-- Modal Structure -->
+  <!-- <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div> -->
+
 <!-- <h5 class="center-align">This should be center aligned</h5> -->
  <!-- ************************************************************************* -->
 

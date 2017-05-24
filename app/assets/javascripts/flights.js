@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el: '#app',
     data: {
       message: 'Hello Vue!',
+      showEditSpending: false,
       retailFlightPrice: railsRetailFlightPrice,
       cards: [
         {id: 1,
@@ -151,6 +152,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     mounted: function() {
       // $('.carousel').carousel();
       // Plugin initialization
+    // the "href" attribute of .modal-trigger must  specify the modal ID that wants to be triggered
+      $('.modal').modal();
       $('.carousel.carousel-slider').carousel({fullWidth: true});
       $('.carousel').carousel();
       $('.slider').slider();
