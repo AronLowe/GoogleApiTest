@@ -5,3 +5,25 @@
 .chosen {
   background-color:#FFFF00;
 }
+
+.overlay {
+    position: relative;
+    transition: all 3s;
+    background:rgba(0,0,0,0.0);
+    opacity: 0;
+}
+
+.overlay:after {
+    content: '\A';
+    position: absolute;
+    width: 100vw; 
+    height: 200vh;
+    top:0; 
+    left:0;
+    background:rgba(0,0,0,0.8);
+    opacity: 1;
+    transition: all 3s;
+}
+.overlay:hover:after {
+    opacity: 0;
+}

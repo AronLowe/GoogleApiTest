@@ -1,0 +1,156 @@
+<script>
+  railsRetailFlightPrice = <%= @response %>;
+</script>
+
+<div id="app">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status" class="text-center">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <section class="main text-center" id="home">
+      <div class="page">
+        <div class="wrapper">
+          <div class="container">
+    
+
+<br>
+
+<div v-if="filteredCards.length < 1">
+ <br>
+  <h1  style="font-family : Avenir Black ; font-size : 60pt" >Voiage</h1>
+            <br>
+    <br>
+    <br>
+    <br>
+    <div class="col s4" >    
+    <h1>How much do you spend a month?</h1>
+    <br>
+    <input style="text-align:center;font-size: 20px;" class="col s2" type="text" v-model="monthlySpend">
+    <br>
+    <button class="waves-effect waves-light btn" v-on:click="eligibleCards()">Enter</button> <br>
+<div> <br>
+ <div class="row" >
+  <div v-for="card in filteredCards" class="col s4" style="min-height: 200px">
+   <!--  <input type="checkbox" name="" v-model="card.cardSelected">{{ card.name }} -->
+      <input type="checkbox" class="filled-in" v-bind:id="'filled-in-box' + card.id" v-model="card.cardSelected" v-on:click="toggleChosenCards(card)"/>
+      <label  v-bind:for="'filled-in-box' + card.id">  <img v-bind:src="card.image" ></label>
+      </div> 
+  </div>
+ </div> 
+ </div>
+
+<!--   <div> Sum: {{ sum }} </div>
+  <div> bonusSum: {{ bonusSum }} </div>
+   <div> timeToAchievement not dynamic: {{ userSpendRequirement }} </div> -->
+  
+<br>
+ 
+ <br>
+  <br>
+<div>
+  <a href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>
+</div>
+</div>
+
+<!-- ################################################################################### -->
+<!-- Retail flight price {{ retailFlightPrice }}!!!  -->
+ <div v-if="filteredCards.length > 0">
+<h2>Out of Pocket Cost of Flight: ${{ outOfPocketPrice.toFixed(2) }} </h2> 
+<div> <p>You will achieve the bonus in {{ timeToAchievement }} months </p> </div>
+   <title>W3.CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <body>
+  <div class="w3-container">
+
+  <div class="w3-border">
+    <!-- <div class="w3-grey" style="height:24px;width:{{ progressBar }}"></div> -->
+    <div class="w3-aqua" v-bind:style="'height:24px;width:' + progressBar + ''"></div>
+  </div>
+  </div>
+<br>
+   
+   
+    <br>
+    <div class="col s4" > 
+
+<div> <br>
+ <div class="row" >
+  <div v-for="card in filteredCards" class="col s4" style="min-height: 200px">
+   <!--  <input type="checkbox" name="" v-model="card.cardSelected">{{ card.name }} -->
+      <input type="checkbox" class="filled-in" v-bind:id="'filled-in-box' + card.id" v-model="card.cardSelected" v-on:click="toggleChosenCards(card)"/>
+      <label  v-bind:for="'filled-in-box' + card.id">  <img v-bind:src="card.image" ></label>
+      </div> 
+  </div>
+ </div> 
+
+  <div v-if="showEditSpending">
+    <p><i>Change your spending habits?</i></p>
+    <input style="text-align:center;font-size: 20px;" class="col s2" type="text" v-model="monthlySpend">
+    <button class="waves-effect waves-light btn" v-on:click="eligibleCards()">Edit</button> <br>
+  </div>
+  <button class="waves-effect waves-light btn" v-on:click="showEditSpending = !showEditSpending">Change spending habits</button>
+
+ </div>
+
+<!--   <div> Sum: {{ sum }} </div>
+  <div> bonusSum: {{ bonusSum }} </div>
+   <div> timeToAchievement not dynamic: {{ userSpendRequirement }} </div> -->
+  
+<!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
+
+<br>
+<br>
+ 
+
+<div>
+  <a href="http://localhost:3000/flights"> Re-Initialze Fun Generator </a>
+</div>
+ </div>
+</div>
+ 
+
+  <!-- Modal Structure -->
+  <!-- <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div> -->
+
+<!-- <h5 class="center-align">This should be center aligned</h5> -->
+ <!-- ************************************************************************* -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.vide.min.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src="js/validator/emailAddress.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/ladda.min.js"></script>
+    <script src="js/retina.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/init.js"></script>
+
+</div>
+
+

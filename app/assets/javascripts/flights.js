@@ -1,10 +1,14 @@
-/* global Vue, $ */
+/* global Vue, $, railsRetailFlightPrice */
 
 document.addEventListener("DOMContentLoaded", function(event) { 
+
+
   var app = new Vue({
     el: '#app',
     data: {
       message: 'Hello Vue!',
+      showEditSpending: false,
+      retailFlightPrice: railsRetailFlightPrice,
       cards: [
         {id: 1,
           name: "Chase Ink Business Preferred",
@@ -15,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 95,
           feeWaived: false,
           bonusValue: 960,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/ink-business-preferred-credit-card.png"},
         {id: 2,
           name: "AMEX Business Gold Rewards Card",
           notionalSpendRequirement: 5000,
@@ -25,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 175,
           feeWaived: true,
           bonusValue: 500,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/AMEX-business-gold.png"},
         {id: 3,
           name: "Chase Sapphire Prerred Card", 
           notionalSpendRequirement: 4000,
@@ -35,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 95,
           feeWaived: true,
           bonusValue: 600,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/chase-sapphire-preferred.png"},
         {id: 4,
           name: "Citi ThankYou Prefered card",
           notionalSpendRequirement: 1000,
@@ -45,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 0,
           feeWaived: true,
           bonusValue: 200,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/citi-thankyou-preferred.png"},
         {id: 5,
           name: "Citi Prestige",
           notionalSpendRequirement: 4000,
@@ -55,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 450,
           feeWaived: false,
           bonusValue: 532,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/citi-prestige-card.png"},
         {id: 6,
           name: "Citi ThankYou Premier",
           notionalSpendRequirement: 3000,
@@ -65,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           annualFee: 95,
           feeWaived: true,
           bonusValue: 399,
-          cardSelected: false},
+          cardSelected: false,
+          image: "img/cards/citi-thankyou-premier-card.png"},
       ],
       filteredCards: [],
       monthlySpend: "", 
@@ -76,10 +86,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     computed: {
       timeToAchievement: function() {
-        return this.userSpendRequirement / this.monthlySpend;
+        return (this.userSpendRequirement / this.monthlySpend).toFixed(1);
+      },
+
+      outOfPocketPrice: function() {
+        return this.retailFlightPrice - this.bonusSum;
+      },
+
+      progressBar: function() {
+        // return ((3 / 4).toFixed(1) * 100 ) + "%" ;
+        return Math.min(((this.bonusSum / this.retailFlightPrice).toFixed(2) * 100), 100) + "%" ;
+      },
+      testFunction: function() {
+        console.log("Panda");
       }
     },
-    methods:{
+    methods: {
       eligibleCards: function() {
         this.filteredCards = [];
         for (var i = 0; i < this.cards.length; i++) {
@@ -112,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.bonusSum += parseInt(selectedCards[k]['bonusValue']);
           this.userSpendRequirement += parseInt(selectedCards[k]['notionalSpendRequirement']);
         }
-      },
+      }
 
       // calcEligibleCardBonus: function(fiteredCards) {
       //   this.userCards = [];
@@ -126,6 +148,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //   }
       //   console.log(this.userCards);
       // }
+    },
+    mounted: function() {
+      // $('.carousel').carousel();
+      // Plugin initialization
+    // the "href" attribute of .modal-trigger must  specify the modal ID that wants to be triggered
+      $('.modal').modal();
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+      $('.carousel').carousel();
+      $('.slider').slider();
+      $('.parallax').parallax();
+      // $('.modal').modal();
+      $('.scrollspy').scrollSpy();
+      // $('.button-collapse').sideNav({'edge': 'left'});
+      // $('.datepicker').pickadate({selectYears: 20});
+      $('select').not('.disabled').material_select();
+      // $('input.autocomplete').autocomplete({
+      //   data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'}
+      // });
+      setTimeout(function() {
+        $('.overlay').fadeTo("slow", 1);
+
+      }, 3000); 
     }
   });
 });
